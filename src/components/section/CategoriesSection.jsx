@@ -36,6 +36,7 @@ async function CategoriesContent({fetcher}) {
     return <ul className="flex gap-4 w-full overflow-scroll scrollbar-hide">
         {data?.map((post) => {
             return <Image
+                key={post.id}
                 src={media(post?.poster_path)}
                 alt=""
                 width={200}

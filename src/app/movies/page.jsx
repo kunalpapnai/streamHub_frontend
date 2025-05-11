@@ -32,7 +32,7 @@ function Movies() {
       label: "Top Action Movies",
       href: "action",
       fetcher: async () => {
-          return (await api.get(ENDPOINT.fetchActionMovies)).data.data?.results;
+          return (await api.get(ENDPOINT.fetchActionMovies)).data.response?.results;
       },
     },
   ];
