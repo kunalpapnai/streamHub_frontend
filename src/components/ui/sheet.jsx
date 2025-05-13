@@ -75,6 +75,9 @@ function SheetContent({
           <XIcon className="size-4" />
           <span className="sr-only">Close</span>
         </SheetPrimitive.Close>
+
+        {/* Adding this line to fix the accessibility issue */}
+    <SheetTitle className="sr-only">Sheet Title</SheetTitle>
       </SheetPrimitive.Content>
     </SheetPortal>
   );
