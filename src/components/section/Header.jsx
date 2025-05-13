@@ -3,6 +3,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import { usePathname } from "next/navigation";
+import ProfileSheet from "../atom/ProfileSheet";
 
 export const navLinks = [
   { name: "Home", key: "", href: "/" },
@@ -16,7 +17,7 @@ export const navLinks = [
 export default function Header() {
   //  anything that start with use are hooks 
   const path = usePathname();
-  const activeTabKey=path.split("/")[1];
+  const activeTabKey = path.split("/")[1];
  
   return(
     <header className="bg-[#0d0e10] py-4 w-full fixed top-0 z-50  border-b-2 border-b-grey">
@@ -66,6 +67,7 @@ export default function Header() {
               className=" py-2 bg-transparent  text-white font-medium focus:outline-none text-sm max-w-[150px]"
             />
           </div>
+          <ProfileSheet />
         </div>
       </div>
     </header>
