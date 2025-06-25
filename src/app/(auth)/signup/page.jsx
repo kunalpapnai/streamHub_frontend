@@ -27,20 +27,25 @@ export default function SignupPage() {
     const onSubmit = async () => {
          try {
             setLoading(true);
+            // if there is any 400/500 -> throw error
             const res = await api.post(ENDPOINT.signup, {
                 name: name,
                 email: email,
                 password: password,
                 confirmPassword: confirmPassword,
             });
+
             if (res.data.status === "success") {
                 router.push("/");
+            } else{
+                console.log("message", res.data.message);
             }
+
             if (res.data) {
                 alert("Account Created!");
             }
         } catch (err) {
-            console.log("err: ", err);
+            console.log("err: ", err.message);
             alert("Something went wrong");
         } finally {
             setLoading(false);

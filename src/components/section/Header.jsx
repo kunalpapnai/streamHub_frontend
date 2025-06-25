@@ -15,7 +15,7 @@ export const navLinks = [
 
 
 export default function Header() {
-  //  anything that start with use are hooks 
+  // anything that start with use are hooks 
   const path = usePathname();
   const activeTabKey = path.split("/")[1];
  
@@ -26,7 +26,7 @@ export default function Header() {
           <Link href="/">
             <Image
               src="/logo.svg"
-              alt="JioCinema Logo"
+              alt="StreamHub Logo"
               width={136}
               height={36}
               className="md:h-9 md:max-w-[136px] max-w-24"
