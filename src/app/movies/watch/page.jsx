@@ -1,3 +1,4 @@
+import WishlistButton from "@/components/atom/WishListButton";
 import { buttonVariants } from "@/components/ui/button";
 import { api, ENDPOINT } from "@/lib/api";
 import { FilmIcon } from "lucide-react";
@@ -21,6 +22,7 @@ const page = async ({ searchParams }) => {
                     />
                     <div className="flex flex-wrap gap-4 px-4 lg:px-10 py-8 items-center">
                         <h1 className="text-2xl font-bold">{details.name}</h1>
+                        <WishlistButton />
                     </div>
                 </>
             ) : (
