@@ -35,7 +35,7 @@ async function CategoriesContent({fetcher}) {
     
     return <ul className="flex gap-4 w-full overflow-scroll scrollbar-hide">
         {data?.map((post) => {
-            return <Link href={getWatchUrl(post.id, post.media_type, post.poster_path)} key={post.id}>
+            return <Link href={getWatchUrl(post.id, post.media_type, post?.poster_path)} key={post.id}>
                 <Image
                     src={media(post?.poster_path)}
                     alt=""
@@ -49,7 +49,7 @@ async function CategoriesContent({fetcher}) {
     </ul>
 }
 
-function CategoriesFallback(){
+export function CategoriesFallback(){
     return (
         <ul className="flex gap-4 w-full overflow-scroll scrollbar-hide">
             {new Array(12).fill(0).map((e, index) => (

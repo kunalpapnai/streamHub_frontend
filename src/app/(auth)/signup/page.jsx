@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { api, ENDPOINT } from "@/lib/api";
 import { useRouter } from "next/navigation";
 import { LucideLoader2 } from "lucide-react";
@@ -29,9 +29,11 @@ export default function SignupPage() {
 
     const userData = useSelector((state) => state.user);
 
-    if (userData.isLoggedIn) {
-        return router.push("/");
-    }
+    useEffect(() => {
+        if (userData.isLoggedIn) {
+            router.push("/");
+        }
+    }, [userData.isLoggedIn, router]);
 
     const onSubmit = async () => {
          try {
