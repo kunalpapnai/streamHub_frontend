@@ -7,9 +7,10 @@ import React from "react";
 
 
 const page = async ({ searchParams }) => {
-    // asynchronous access of `searchParams.id`
-    const { id } = await searchParams;
+    // asynchronous access of `searchParams.id` and `searchParams.poster_path`
+    const { id, poster_path } = await searchParams;
     const details = (await api.get(ENDPOINT.getTvShowsDetails(id))).data.data.results?.[0];
+    console.log("poster_path", poster_path);
     
     return (
         <div className="mt-[80px]">
@@ -22,7 +23,14 @@ const page = async ({ searchParams }) => {
                     />
                     <div className="flex flex-wrap gap-4 px-4 lg:px-10 py-8 items-center">
                         <h1 className="text-2xl font-bold">{details.name}</h1>
-                        <WishlistButton />
+                        <WishlistButton
+                            wishlist={{
+                                id: details.id,
+                                name: details.name,
+                                media_type: details.media_type || "tv",
+                                poster_path:poster_path
+                            }}
+                        />
                     </div>
                 </>
             ) : (
