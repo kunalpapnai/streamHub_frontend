@@ -47,8 +47,8 @@ export default function LoginPage() {
                 password: password,
             });
             
-            if(res.data.status === "success"){
-                dispatch(userLoggedInDetails(res.data.user));
+            if(res?.data?.status === "success"){
+                dispatch(userLoggedInDetails(res?.data?.user));
                 // i am logged in
 
                 
@@ -56,7 +56,7 @@ export default function LoginPage() {
                 router.push("/");
             }
         } catch(err){
-            console.log("err: ", err.response.data.message);
+            console.log("err: ", err?.response?.data?.message);
             alert("Invalid creds");
         } finally{
             setLoading(false);

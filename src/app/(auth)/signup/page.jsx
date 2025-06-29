@@ -46,18 +46,18 @@ export default function SignupPage() {
                 confirmPassword: confirmPassword,
             });
 
-            if (res.data.status === "success") {
-                dispatch(userLoggedInDetails(res.data.user));
+            if (res?.data?.status === "success") {
+                dispatch(userLoggedInDetails(res?.data?.user));
                 router.push("/");
             } else{
-                console.log("message", res.data.message);
+                console.log("message", res?.data?.message);
             }
 
-            if (res.data) {
+            if (res?.data) {
                 alert("Account Created!");
             }
         } catch (err) {
-            console.log("err: ", err.response.data.message);
+            console.log("err: ", err?.response?.data?.message);
             alert("Something went wrong");
         } finally {
             setLoading(false);
