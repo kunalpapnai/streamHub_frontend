@@ -18,6 +18,7 @@ import { LucideLoader2 } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useDispatch, useSelector } from "react-redux";
 import { userLoggedInDetails } from "@/redux/userSlice";
+import { toast } from "sonner";
 
 export default function LoginPage() {
     const [email, setEmail] = useState("");
@@ -37,7 +38,7 @@ export default function LoginPage() {
     const onSubmit = async () => {
         try{
             if(!email || !password){
-                alert("Please fill the fields");
+                toast("Please fill the fields");
                 return;
             }
 
@@ -57,7 +58,7 @@ export default function LoginPage() {
             }
         } catch(err){
             console.log("err: ", err?.response?.data?.message);
-            alert("Invalid creds");
+            toast("Invalid credentials");
         } finally{
             setLoading(false);
         }
