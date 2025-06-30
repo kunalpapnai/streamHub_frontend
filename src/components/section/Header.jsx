@@ -23,14 +23,15 @@ export default function Header() {
     <header className="bg-[#0d0e10] py-4 w-full fixed top-0 z-50  border-b-2 border-b-grey">
       <div className="lg:mx-auto mx-2 lg:px-4 flex items-center text-nowrap">
         <div className="flex">
-          <Link href="/">
+          <Link href="/" className="flex items-center gap-1 h-9 max-w-24 md:max-w-[136px]">
             <Image
               src="/logo.svg"
               alt="StreamHub Logo"
-              width={136}
+              width={36}
               height={36}
-              className="md:h-9 md:max-w-[136px] max-w-24"
+              className="w-9 h-9 object-contain flex-shrink-0"
             />
+            <span className="text-lg font-semibold text-white hidden md:block">StreamHub</span>
           </Link>
 
           <Link
