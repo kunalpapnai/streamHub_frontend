@@ -47,6 +47,7 @@ export const ENDPOINT = {
     // streaming urls
     fetchAllStreamingVideos: `/video`,
     fetchStreamingVideo: (id) => `/video?id=${id}`,
+    fetchVideoThumbnail: (id) => `/video/thumbnail?videoId=${id}`,
 }
 
 export const media = (path) => `https://image.tmdb.org/t/p/original` + path;
@@ -63,3 +64,5 @@ export function getWatchUrl(vidId, mediaType, poster_path) {
     const prefix = mediaType === "tv" ? "tv" : "movies";
     return `${prefix}/watch?id=${vidId}&poster_path=${poster_path}`;
 }
+
+export const getStreamingVideoThumbnail = (id) => API_BASE_URL + ENDPOINT.fetchVideoThumbnail(id);
