@@ -16,10 +16,16 @@ const userSlice = createSlice({
         userLoggedOutDetails: (state) => {
             state.isLoggedIn = false;
             state.user = null;
+        },
+        updateUserPremium: (state, action) => {
+            if (state.user) {
+                state.user.isPremium = action.payload;
+            }
         }
-    },
+    }
 });
 
 export const { userLoggedInDetails, 
-            userLoggedOutDetails} = userSlice.actions;
+            userLoggedOutDetails,
+            updateUserPremium} = userSlice.actions;
 export default userSlice.reducer;

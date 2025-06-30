@@ -46,7 +46,7 @@ async function BannerSectionContent({fetcher}) {
                 alt=""
                 width={700}
                 height={500}
-                className="w-full h-full bg-slate-600 rounded-lg object-cover"
+                className="w-full h-full bg-slate-600 rounded-lg object-fill"
                 quality={30}
               />
             </Link>
