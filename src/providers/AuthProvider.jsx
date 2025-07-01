@@ -14,13 +14,13 @@ const AuthProvider = ({ children }) => {
         const fetcher = async () => {
             try {
                 const res = await api.get(ENDPOINT.user);
-                console.log("res",res);
+                
                 if (res.data.status === "success") {
-                    console.log("res", res.data.user);
+                    
                     dispatch(userLoggedInDetails(res.data.user));
                 }
             } catch (err) {
-                console.log("User needs to Login", err);
+                // console.log("User needs to Login", err);
             } finally {
                 setLoading(false);
             }

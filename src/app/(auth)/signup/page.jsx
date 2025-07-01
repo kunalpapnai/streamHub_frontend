@@ -51,14 +51,14 @@ export default function SignupPage() {
                 dispatch(userLoggedInDetails(res?.data?.user));
                 router.push("/");
             } else{
-                console.log("message", res?.data?.message);
+                // console.log("message", res?.data?.message);
             }
 
             if (res?.data) {
                 toast("Account Created!");
             }
         } catch (err) {
-            console.log("err: ", err?.response?.data?.message);
+            // console.log("err: ", err?.response?.data?.message);
             toast("Something went wrong");
         } finally {
             setLoading(false);

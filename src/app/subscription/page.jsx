@@ -104,7 +104,7 @@ function Subscription() {
             dispatch(updateUserPremium(true))
             toast("Premium access updated successfully");
         } catch (err) {
-            console.log(err);
+            // console.log(err);
         } finally {
             setLoading(false);
         }

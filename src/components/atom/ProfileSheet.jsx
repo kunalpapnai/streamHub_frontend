@@ -24,7 +24,7 @@ const ProfileSheet = () => {
                 router.push("/");
             }
         } catch (err) {
-            console.log("err: ", err);
+            // console.log("err: ", err);
         }
     };
 
