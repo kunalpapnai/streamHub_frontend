@@ -1,6 +1,6 @@
 "use client";
 
-import CategoriesContentForWatchList from '@/components/section/CategoriesContentForWatchlist';
+import CategoriesContentForWatchList from '@/components/section/CategoriesContentForWatchList';
 import { CategoriesFallback } from '@/components/section/CategoriesSection';
 import { buttonVariants } from '@/components/ui/button';
 import { api, ENDPOINT } from '@/lib/api';
