@@ -17,7 +17,7 @@ const ProfileSheet = () => {
     const handleLogout = async () => {
         try {
             const res = await api.get(ENDPOINT.logout);
-            console.log("res", res.data);
+            
             if (res?.data?.status === "success") {
                 dispatch(userLoggedOutDetails());
                 // send to home page 

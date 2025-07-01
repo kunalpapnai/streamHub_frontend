@@ -11,7 +11,6 @@ const page = async ({ searchParams }) => {
     // asynchronous access of `searchParams.id` and `searchParams.poster_path`
     const { id, poster_path } = await searchParams;
     const details = (await api.get(ENDPOINT.getTvShowsDetails(id))).data.data.results?.[0];
-    console.log("poster_path", poster_path);
     
     return (
         <div className="mt-[80px]">

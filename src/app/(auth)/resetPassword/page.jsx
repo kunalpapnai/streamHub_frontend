@@ -47,9 +47,9 @@ function ResetPassword() {
             }
         } catch (err) {
             if (err?.response?.data?.message === "user not found for this email") {
-                console.log("Email doesn't exist");
+                toast("Email doesn't exist");
             } else {
-                console.log("Error sending OTP");
+                toast("Error sending OTP");
                 console.error("Error sending OTP:", err);
             }
         } finally {
