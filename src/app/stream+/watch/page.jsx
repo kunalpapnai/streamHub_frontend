@@ -5,13 +5,15 @@ import { API_BASE_URL } from '@/lib/api';
 import { cn } from '@/lib/utils';
 import { FolderLockIcon } from 'lucide-react';
 import Link from 'next/link';
+import { useSearchParams } from 'next/navigation';
 import React from 'react';
 import { useSelector } from "react-redux";
 
 
-function WatchStream({ searchParams }) {
-    const { id } = React.use(searchParams);
-    const videoId = id;
+function WatchStream() {
+    const searchParams = useSearchParams();
+    const videoId = searchParams.get("id");
+    
     const userData = useSelector((state) => state.user);
     // login wala ui
     if (!userData.isLoggedIn) {
