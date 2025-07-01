@@ -19,7 +19,7 @@ export default async function StreamPlusPage() {
                         href={`stream+/watch?id=${video.id}`}
                         className="relative flex items-center justify-center"
                     >
-                        <Image
+                        <img
                             src={getStreamingVideoThumbnail(video.id)}
                             alt=""
                             width={200}
