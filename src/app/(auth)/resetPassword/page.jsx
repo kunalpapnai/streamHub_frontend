@@ -73,6 +73,11 @@ function ResetPassword() {
             setLoading(false);
             return;
         }
+        if (newPassword.length < 6 || confirmNewPassword.length < 6) {
+            toast("New password and Confirm password should atleast be of length 6");
+            setLoading(false);
+            return;
+        }
 
         try {
             const res = await api.patch(ENDPOINT.resetPassword, {
@@ -94,7 +99,7 @@ function ResetPassword() {
                 toast("Invalid OTP");
             } else {
                 toast("Error resetting password");
-                console.error("Error resetting password:", err);
+                // console.error("Error resetting password:", err);
             }
         } finally {
             setLoading(false);

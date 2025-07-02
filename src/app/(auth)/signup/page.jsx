@@ -38,6 +38,21 @@ export default function SignupPage() {
 
     const onSubmit = async () => {
          try {
+            if(!name || !email || !password || !confirmPassword){
+                toast("Please fill the fields");
+                return;
+            }
+
+            if(password !== confirmPassword){
+                toast("Password should be equal to Confirm Password");
+                return;
+            }
+
+            if (password.length < 6 || confirmPassword.length < 6) {
+                toast("New password and Confirm password should atleast be of length 6");
+                return;
+            }
+
             setLoading(true);
             // if there is any 400/500 -> throw error
             const res = await api.post(ENDPOINT.signup, {
@@ -58,8 +73,8 @@ export default function SignupPage() {
                 toast("Account Created!");
             }
         } catch (err) {
-            // console.log("err: ", err?.response?.data?.message);
-            toast("Something went wrong");
+            toast(err?.response?.data?.message);
+            // toast("Something went wrong");
         } finally {
             setLoading(false);
         }
