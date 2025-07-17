@@ -8,7 +8,7 @@ import ProfileSheet from "../atom/ProfileSheet";
 export const navLinks = [
   { name: "Home", key: "", href: "/" },
   { name: "Movies", key: "movies", href: "/movies" },
-  { name: "Tv Shows", key: "tv", href: "/tv" },
+  { name: "TV Shows", key: "tv", href: "/tv" },
   { name: "Watchlist", key: "watchlist", href: "/watchlist" },
   { name: "Stream+", key: "stream+", href: "/stream+" },
 ];
