@@ -9,7 +9,7 @@ import React from "react";
 
 const page = async ({ searchParams }) => {
     // asynchronous access of `searchParams.id` and `searchParams.poster_path`
-    const { id, poster_path } = await searchParams; 
+    const { id, poster_path } = await searchParams;
     const details = (await api.get(ENDPOINT.getMovieDetails(id))).data.data.results?.[0];
     
     return (
@@ -25,9 +25,9 @@ const page = async ({ searchParams }) => {
                         <h1 className="text-2xl font-bold">{details.name}</h1>
                         <WishlistButton
                             wishlist={{
-                                id: details.id,
+                                id: id,
                                 name: details.name,
-                                media_type: details.media_type || "tv",
+                                media_type: "movies",
                                 poster_path: poster_path
                             }}
                         />

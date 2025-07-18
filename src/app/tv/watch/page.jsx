@@ -25,9 +25,9 @@ const page = async ({ searchParams }) => {
                         <h1 className="text-2xl font-bold">{details.name}</h1>
                         <WishlistButton
                             wishlist={{
-                                id: details.id,
+                                id: id,
                                 name: details.name,
-                                media_type: details.media_type || "tv",
+                                media_type: "tv",
                                 poster_path:poster_path
                             }}
                         />
