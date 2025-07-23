@@ -43,8 +43,8 @@ function AutoplayCarousel({ data }){
             ))}
             </CarouselContent>
               <div className="absolute bottom-4 right-[12%] hidden md:flex">
-                <CarouselPrevious className="w-[60px] h-[60px] cursor-pointer" />
-                <CarouselNext className="w-[60px] h-[60px] ml-2 cursor-pointer" />
+                <CarouselPrevious className="w-[60px] h-[60px] cursor-pointer hover:bg-gray-700" />
+                <CarouselNext className="w-[60px] h-[60px] ml-2 cursor-pointer hover:bg-gray-700" />
               </div>
         </Carousel>
     )

@@ -34,6 +34,7 @@ export const ENDPOINT = {
     //extra data 
     getMovieDetails: (id) => `/movies/details?id=${id}`,
     getTvShowsDetails: (id) => `/tv/details?id=${id}`,
+    searchResult: (query) => `/discover/explore?search_query=${query}`,
 
     //user
     user: "/user",

@@ -2,8 +2,10 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import ProfileSheet from "../atom/ProfileSheet";
+import { useState } from "react";
+import { Loader2 } from "lucide-react";
 
 export const navLinks = [
   { name: "Home", key: "", href: "/" },
@@ -18,6 +20,25 @@ export default function Header() {
   // anything that start with use are hooks 
   const path = usePathname();
   const activeTabKey = path.split("/")[1];
+  const [searchQuery, setSearchQuery] = useState("");
+  const [loading, setLoading] = useState(false);
+  const router = useRouter();
+
+  const searchResult = () => {
+    if (searchQuery == "") return;
+    setLoading(true);
+    router.push(`/search?query=${searchQuery}`);
+    setLoading(false);
+    setSearchQuery("");
+  }
+
+  if (loading) {
+    return (
+      <div className="w-full h-screen flex items-center justify-center">
+        <Loader2 className="animate-spin md:h-[50px] md:w-[50px] h-[35px] w-[35px] text-gray-300" />
+      </div>
+    );
+  }
  
   return(
     <header className="bg-[#0d0e10] py-4 w-full fixed top-0 z-50  border-b-2 border-b-grey">
@@ -66,6 +87,9 @@ export default function Header() {
               type="text"
               placeholder="Search..."
               className=" py-2 bg-transparent  text-white font-medium focus:outline-none text-sm max-w-[150px]"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              onKeyUp={(e) => (e.key === "Enter" ? searchResult() : null)}
             />
           </div>
           <ProfileSheet />
