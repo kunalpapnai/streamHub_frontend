@@ -17,7 +17,7 @@ const AuthProvider = ({ children }) => {
                 
                 if (res.data.status === "success") {
                     
-                    dispatch(userLoggedInDetails(res.data.user));
+                    dispatch(userLoggedInDetails(res?.data?.user));
                 }
             } catch (err) {
                 // console.log("User needs to Login", err);

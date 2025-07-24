@@ -51,7 +51,6 @@ export default function LoginPage() {
             if(res?.data?.status === "success"){
                 dispatch(userLoggedInDetails(res?.data?.user));
                 // i am logged in
-
                 
                 // do whatever you want
                 router.push("/");

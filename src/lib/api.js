@@ -40,6 +40,7 @@ export const ENDPOINT = {
     user: "/user",
     addToWishlist: "/user/wishlist",
     getWishlist: "/user/wishlist",
+    deleteFromWishlist: "/user/wishlist",
 
     //payment
     payment: "/payment/order",
