@@ -163,7 +163,7 @@ function Subscription() {
                         ))}
                     </div>
                     <button
-                        className="bg-pink-600 p-3 md:mt-10 item-start flex font-medium rounded-lg ml-2"
+                        className="bg-pink-600 p-3 md:mt-10 item-start flex font-medium rounded-lg ml-2 cursor-pointer hover:bg-pink-700"
                         onClick={handlePaymentClick}
                     >
                         Continue & Pay

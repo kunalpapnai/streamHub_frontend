@@ -13,7 +13,7 @@ const SpecialOfferCard = ({
     return (
         <div
             className={`bg-purple-900 p-6 rounded-lg  text-white relative mb-4 md:mb-0 ${isActive ? "border-2 border-yellow-300" : ""
-                }`}
+                } cursor-pointer`}
             onClick={onClick}
         >
             <div className="absolute top-2 right-2 px-3 py-1 bg-yellow-300 text-purple-900 text-xs uppercase font-semibold rounded">
